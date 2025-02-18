@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodePen - Drag Papers ❤️</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'>
   <link rel="stylesheet" href="./style.css">
@@ -14,7 +13,26 @@
   Your browser does not support the audio element.
 </audio>
 
-<button id="music-btn">🔊</button>
+<button id="music-btn" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+">
+  🔊
+</button>
 
 <script>
   const audio = document.getElementById("bg-music");
@@ -32,6 +50,7 @@
     }
   });
 
+  // Try auto-playing after user interaction
   document.body.addEventListener("click", function () {
     if (audio.paused) {
       audio.play().catch(() => console.log("Autoplay blocked"));
@@ -48,6 +67,7 @@
 </div>
 
 <div class="paper image">
+  <p></p>
   <img src="images/2.jpg" />
 </div>
 
